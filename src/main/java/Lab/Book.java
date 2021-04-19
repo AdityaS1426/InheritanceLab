@@ -10,6 +10,6 @@ public class Book {
     }
 
     public String toString() {
-        return "The book, titled " + title + ", is written by " + author;
+        return "The book, titled " + title + ", is written by " + author + ".";
     }
 }
