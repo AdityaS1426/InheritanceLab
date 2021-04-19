@@ -13,7 +13,7 @@ import org.springframework.ui.Model;
 public class MainController {
     @GetMapping("/")
     public String Index(){
-        return "index";
+        return "index.html";
     }
 
     @GetMapping("/inheritance")
@@ -30,12 +30,12 @@ public class MainController {
             model.addAttribute("sentence", book);
             long finalTime = System.nanoTime() - startTime;
             model.addAttribute("time", "The time it took to execute the commands was " + finalTime + " nanoseconds.");
-            return "inheritance";
+            return "inheritance.html";
         }
         PictureBook picturebook = new PictureBook(title, author, illustrator);
         model.addAttribute("sentence", picturebook);
         long finalTime = System.nanoTime() - startTime;
         model.addAttribute("time", "The time it took to execute the commands was " + finalTime + " nanoseconds.");
-        return "inheritance";
+        return "inheritance.html";
     }
 }
