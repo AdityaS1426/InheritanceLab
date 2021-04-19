@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Aditya's Inheritance Lab</title>
+</head>
+<body>
+<div class="lab">
+    <h1>Inheritance Lab - Literature</h1>
+    <h3>Book</h3>
+    <form th:action="@{Inheritance}">
+        <label>Here, you will be able to store information about a book, such as the title, the author, the illustrator, etc.</label>
+        <br>
+        <label>Title</label>
+        <input  th:name="title" th:value="${title}">
+        <br>
+        <label>Author</label>
+        <input th:name="author" th:value="${author}">
+        <br>
+        <label>Illustrator</label>
+        <input th:name="illustrator" th:value="${illustrator}">
+        <br>
+        <input type="submit">
+    </form>
+    <p th:text="${sentence}"></p>
+
+    <p th:text="${time}"></p>
+
+</div>
+</body>
+</html>

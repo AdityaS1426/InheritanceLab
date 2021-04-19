@@ -1,21 +1,14 @@
-<!DOCTYPE HTML>
-<html xmlns:th="http://www.w3.org/1999/xhtml">
-<head th:replace="fragments/headfile :: head">
-    <title>Factorial</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page of Inheritance Lab</title>
 </head>
 <body>
-<div>
-    <form id="Car" action="LabCar" method="POST" >
-        <label for="Gears">How many gears do you want your car to have?</label>
-        <input name="Gears" id="Gears" >
-        <label for="Speed">What do you want the top speed of your car to be?</label>
-        <input name="Speed" id="Speed" >
-        <label for="Height">What ride height do you want your car to be?</label>
-        <input name="Height" id="Height" >
-        <button>Go!</button>
-    </form>
+<h1>Aditya's Inheritance Mini Lab</h1>
+<ul>
+    <li><a href="Inheritance">Inheritance Lab</a></li>
+</ul>
 
-    <h1><p th:text="'Result: '+${paths}"/></h1>
-</div>
 </body>
 </html>
