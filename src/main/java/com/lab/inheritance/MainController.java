@@ -13,11 +13,11 @@ import org.springframework.ui.Model;
 public class MainController {
     @GetMapping("/")
     public String Index(){
-        return "index.html";
+        return "index";
     }
 
     @GetMapping("/inheritance")
-    public String inheritance(@RequestParam(value="title", required = false) String title, @RequestParam(value="author", required = false) String author, @RequestParam(value="illustrator", required = false) String illustrator, Model model) {
+    public String Inheritance(@RequestParam(value="title", required = false) String title, @RequestParam(value="author", required = false) String author, @RequestParam(value="illustrator", required = false) String illustrator, Model model) {
         long startTime = System.nanoTime();
         if (title == null || title == "") {
             title = "Diary of a Wimpy Kid";
@@ -30,12 +30,12 @@ public class MainController {
             model.addAttribute("sentence", book);
             long finalTime = System.nanoTime() - startTime;
             model.addAttribute("time", "The time it took to execute the commands was " + finalTime + " nanoseconds.");
-            return "inheritance.html";
+            return "inheritance";
         }
         PictureBook picturebook = new PictureBook(title, author, illustrator);
         model.addAttribute("sentence", picturebook);
         long finalTime = System.nanoTime() - startTime;
         model.addAttribute("time", "The time it took to execute the commands was " + finalTime + " nanoseconds.");
-        return "inheritance.html";
+        return "inheritance";
     }
 }
