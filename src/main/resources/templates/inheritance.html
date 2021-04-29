@@ -3,33 +3,25 @@
       xmlns:th="http://thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Aditya's Inheritance Lab</title>
+    <title>Inheritance | Aditya</title>
 </head>
 
 <body bgcolor="#20BCE3"></body>
 
 <body>
 <div class="lab">
-    <h1>Inheritance Lab - Literature</h1>
-    <h3>Book</h3>
-    <form th:action="@{Inheritance}">
-        <label>Here, you will be able to store information about a book, such as the title, the author, the illustrator, etc.</label>
-        <br>
-        <label>Title</label>
-        <input  th:name="title" th:value="${title}">
-        <br>
-        <label>Author</label>
-        <input th:name="author" th:value="${author}">
-        <br>
-        <label>Illustrator</label>
-        <input th:name="illustrator" th:value="${illustrator}">
-        <br>
+    <h1>AP CS A - Inheritance Lab</h1>
+
+    <h3>Try it!</h3>
+    <form th:action="@{inheritance}">
+        <label>Fill inthe blanks! Enter the vehicle's make, model, year, & top speed!</label>
+        <input type="text" th:name="make" th:value="${make}">
+        <input type="text" th:name="model" th:value="${model}">
+        <input type="number" min="1900" max="2023" th:name="age" th:value="${age}">
+        <input type="number" min="1" max="300" th:name="topspeed" th:value="${topspeed}">
         <input type="submit">
     </form>
-    <p th:text="${sentence}"></p>
-
-    <p th:text="${time}"></p>
-
+    <p th:text="${cars}"></p>
 </div>
 </body>
 </html>

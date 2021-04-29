@@ -1,7 +1,6 @@
 package com.lab.inheritance;
 
-import Lab.Book;
-import Lab.PictureBook;
+import Lab.SportsCar;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,32 +9,23 @@ import org.springframework.ui.Model;
 
 @RequestMapping("")
 @Controller
-public class MainController {
+public class MainController
+{
     @GetMapping("/")
     public String Index(){
         return "index";
     }
 
     @GetMapping("/inheritance")
-    public String Inheritance(@RequestParam(value="title", required = false) String title, @RequestParam(value="author", required = false) String author, @RequestParam(value="illustrator", required = false) String illustrator, Model model) {
-        long startTime = System.nanoTime();
-        if (title == null || title == "") {
-            title = "Diary of a Wimpy Kid";
-        }
-        if (author == null || author == "") {
-            author = "Jeff Kinney";
-        }
-        if (illustrator == null || illustrator == "") {
-            Book book = new Book(title, author);
-            model.addAttribute("sentence", book);
-            long finalTime = System.nanoTime() - startTime;
-            model.addAttribute("time", "The time it took to execute the commands was " + finalTime + " nanoseconds.");
-            return "inheritance";
-        }
-        PictureBook picturebook = new PictureBook(title, author, illustrator);
-        model.addAttribute("sentence", picturebook);
-        long finalTime = System.nanoTime() - startTime;
-        model.addAttribute("time", "The time it took to execute the commands was " + finalTime + " nanoseconds.");
+    public String Inheritance(@RequestParam(value = "make", required = false, defaultValue = "Porsche") String make,
+                            @RequestParam(value = "model", required = false, defaultValue = "Cayman") String model,
+                            @RequestParam(value = "age", required = false, defaultValue = "2018") Integer age,
+                            @RequestParam(value = "topspeed", required = false, defaultValue = "155") Integer topspeed, Model springmodel){
+
+        SportsCar sportscar1 = new SportsCar(make, model, age, topspeed);
+        //Cars.add(sportscar1);
+
+        springmodel.addAttribute("cars", sportscar1);
         return "inheritance";
     }
 }
